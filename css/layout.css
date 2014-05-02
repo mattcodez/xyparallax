@@ -1,0 +1,67 @@
+BODY {
+	position: absolute;
+    width: 200%;
+    height: 200%;
+}
+
+#left-top{
+    position: absolute;
+	width:15%;
+	height: 15%;
+    left: 10%;
+    top: 10%;
+}
+
+#right-top{
+    position: absolute;
+	height: 15%;
+	width:15%;
+    right: 10%;
+    top: 10%;
+}
+
+#left-bottom{
+    position: absolute;
+	height: 15%;
+	width:15%;
+    left: 10%;
+    bottom: 10%;
+}
+
+#right-bottom{
+    position: absolute;
+	height: 15%;
+	width:15%;
+    right: 10%;
+    bottom: 10%;
+}
+
+.lt {
+	left:0;
+	top:0;
+    background-color: #FF0000;
+}
+
+.rt {
+	right:0;
+	top:0;
+    background-color: #00FF00;
+}
+
+.lb {
+	left:0;
+	bottom:0;
+    background-color: #000eff;
+}
+
+.rb {
+	right:0;
+	bottom:0;
+    background-color: #ffe700;
+}
+
+body div > div {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+}
