@@ -5,33 +5,37 @@ $(window).scroll(function(e){
 });
 
 function setBoxSplit(left, top){
-    /*var pageCenter = {
-        left: Math.floor($(document.body).width() / 2),
-        top: Math.floor($(document.body).height() / 2)
-    };*/
-
-	var viewPortCenter = {
-		left: Math.floor($(window).width() / 2) + left,
-		top: Math.floor($(window).height() / 2) + top
+	//view port dimensions
+	var vpWidth = $(window).width();
+	var vpHeight = $(window).height();
+	
+	var vpCenter = {
+		left: Math.floor(vpWidth / 2) + left,
+		top: Math.floor(vpHeight / 2) + top
 	};
+	
+	// 1/4th of the diagnal screen length
+	var changeThreshold = Math.floor(Math.sqrt(Math.pow(vpWidth, 2) + Math.pow(vpHeight, 2)) / 4);
 
-    $('.lt').each(function(i, el){
+    $('.box').each(function(i, el){
     	el = $(el);
 
+		//Get distance between viewport center and box center
 		var offset = el.offset();
 		var d = distance(
-			offset.left,
-			viewPortCenter.left,
-			offset.top,
-			viewPortCenter.top
+			offset.left + (el.width() / 2),
+			vpCenter.left,
+			offset.top + (el.height() / 2),
+			vpCenter.top
 		);
 
-		var threshold = 500;
-		if (d < threshold){
-			var scaleRatio = (threshold - d) / threshold;
-			var scalePercent = 100 * scaleRatio;
+		//With current CSS, a box is set to be about 30% width of VP
+		//so scale to 3 to approach full VP size
+		if (d < changeThreshold){
+			var scaleRatio = (changeThreshold - d) / changeThreshold;
+			var scaleUnit = Math.max(3 * scaleRatio, 1);
 			el.css({
-				'-webkit-transform': 'translate(-' + scalePercent + '%, -' + scalePercent + '%)'
+				'-webkit-transform': 'scale(' + scaleUnit + ')'
 			});
 		}
     });
