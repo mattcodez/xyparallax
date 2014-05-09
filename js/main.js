@@ -1,9 +1,5 @@
 "use strict";
 
-$(window).scroll(function(e){
-   setBoxSplit($(document.body).scrollLeft(), $(document.body).scrollTop());
-});
-
 function setBoxSplit(left, top){
 	//view port dimensions
 	var vpWidth = $(window).width();
@@ -44,3 +40,20 @@ function setBoxSplit(left, top){
 function distance(x1, x2, y1, y2){
     return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 }
+
+$(function(){
+	var s = Snap("#svg");
+	var bigCircle = s.circle(150, 150, 100);
+	bigCircle.attr({
+		fill: "#bada55",
+		stroke: "#000",
+		strokeWidth: 5
+	});
+	
+	var r = 5;
+	function anim(){
+		r = r > 5 ? 5 : 200;
+		bigCircle.animate({r: r}, 2000, anim);
+	}
+	anim();
+});
