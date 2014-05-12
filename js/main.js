@@ -39,4 +39,8 @@ $(function(){
 		bigCircle.animate({r: r}, 2000, anim);
 	}
 	anim();
+	
+	Snap.load('img/Stick_Figure_Male_clip_art.svg', function(f){
+		s.append(f);
+	});
 });
