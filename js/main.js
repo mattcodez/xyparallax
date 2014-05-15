@@ -43,6 +43,11 @@ $(function(){
 	Snap.load('img/Stick_Figure_Male_clip_art.svg', function(f){
 		var el = f.select('svg');
 		s.append(el);
-		el.attr({y:500});
+		el.attr({y:400});
+		
+		var m = new Snap.Matrix();
+		m.scale(0.5);
+		m.rotate(-20, 0, 0);
+		el.select('g').transform(m);
 	});
 });

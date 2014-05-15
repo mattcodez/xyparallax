@@ -17,6 +17,7 @@
   <sodipodi:namedview
      id="base"
      showgrid="true" />
+  <g>
   <path
      style="fill:#000080;fill-rule:evenodd;stroke:none;stroke-opacity:1;stroke-width:1pt;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;"
      d="M 212.828 128.61 L 127.188 217.642 L 144.994 235.448 L 212.828 163.375 L 213.677 284.627 L 155.17 465.235 C 155.17 465.235 193.327 466.186 194.175 464.49 C 194.598 463.642 236.57 297.347 238.266 294.803 L 285.75 464.387 L 322.21 464.387 L 263.704 285.475 L 264.552 163.375 L 334.081 233.753 L 354.432 216.794 L 266.248 128.61 L 212.828 128.61 z "
@@ -27,6 +28,7 @@
      d="M 239.114 12.4448 C 159.409 14.1406 160.257 118.435 236.57 119.283 C 318.819 119.283 321.362 13.2928 239.114 12.4448 z "
      id="path564"
      sodipodi:nodetypes="ccc" />
+  </g>
 
   <rdf:RDF 
    xmlns="http://web.resource.org/cc/"
