@@ -50,4 +50,12 @@ $(function(){
 		m.rotate(-20, 0, 0);
 		el.select('g').transform(m);
 	});
+	
+	Snap.load('img/alien.svg', function(f){
+		var svg = f.select('svg');
+		s.append(svg);
+	
+		//matrix scale() was doing some funky rotation
+		svg.select('svg > use').attr({height:173});
+	});
 });
